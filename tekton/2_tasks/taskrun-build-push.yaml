@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TaskRun
+metadata:
+  generateName: build-push-run-
+spec:
+  taskRef:
+    name: build-push
+  inputs:
+    resources:
+      - name: git
+        resourceRef:
+          name: git-bookinfo-details
+      - name: image
+        resourceRef:
+          name: registry-bookinfo-details

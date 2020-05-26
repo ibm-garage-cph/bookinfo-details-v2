@@ -1,0 +1,9 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: registry-bookinfo-details
+spec:
+  type: image
+  params:
+    - name: url
+      value: de.icr.io/kmddk/bookinfo-details-mn

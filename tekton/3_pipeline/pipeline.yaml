@@ -1,0 +1,48 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: pipeline-details-service
+spec:
+  resources:
+    - name: git
+      type: git
+    - name: image
+      type: image
+  params:
+    - name: TARGET_DIRECTORY
+      type: string
+      description: name of the directory with Dockerfile and package.json
+    - name: NAMESPACE
+      type: string
+      description: name of the clustyer namespace to apply mamnifests to
+  tasks:
+    - name: test
+      taskRef:
+        name: test-nodejs
+      resources:
+        inputs:
+          - name: git
+            resource: git
+    - name: build-push
+      taskRef:
+        name: build-push
+      runAfter: [test]
+      resources:
+        inputs:
+          - name: git
+            resource: git
+          - name: image
+            resource: image
+    - name: apply-manifest
+      taskRef:
+        name: apply-manifests-task
+      runAfter: [build-push]
+      resources:
+        inputs:
+          - name: git
+            resource: git
+          - name: image
+            resource: image
+      params:
+        - name: namespace
+          value: $(params.NAMESPACE)
