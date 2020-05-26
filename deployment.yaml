@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: details-nodejs
+spec:
+  selector:
+    matchLabels:
+      app: details-nodejs
+  template:
+    metadata:
+      labels:
+        app: details-nodejs
+    spec:
+      containers:
+        - name: details-nodejs
+          image: de.icr.io/kmddk/bookinfo-details-mn:1
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 3000
