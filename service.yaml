@@ -8,5 +8,6 @@ spec:
   selector:
     app: details-nodejs
   ports:
-    - port: 3000
+    - port: 80
       targetPort: 3000
+      name: http
