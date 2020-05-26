@@ -14,5 +14,5 @@ oc create secret docker-registry regcred \
 oc create secret docker-registry regcred \
     --docker-server='de.icr.io' \
     --docker-username='iamapikey' \
-    --docker-password='I1_QDYpLqSoy174jnMuWCIgdR2AligMLFQYXPCVjRRk9' \
+    --docker-password='secret' \
     --docker-email='iamapikey'
