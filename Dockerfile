@@ -9,6 +9,7 @@ COPY package.json package.json
 COPY package-lock.json package-lock.json
 COPY src src
 COPY test test
+COPY healthy healthy
 
 # Run scripts inside the image on build-time
 RUN npm install
