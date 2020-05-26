@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: details-nodejs
+  labels:
+    name: app-metrics-label
 spec:
   selector:
     app: details-nodejs

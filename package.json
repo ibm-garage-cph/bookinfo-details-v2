@@ -4,7 +4,6 @@
   "description": "A nodejs implementation of the bookinfo details service",
   "main": "server.js",
   "scripts": {
-    "test:ci": "jest",
     "test": "jest --watch",
     "start": "node src/server.js"
   },
@@ -19,6 +18,9 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-prom-bundle": "^6.0.0",
+    "prom-client": "^12.0.0",
+    "winston": "^3.2.1"
   }
 }
