@@ -7,12 +7,13 @@ WORKDIR /app
 # Copy files from dockerfile location disk to image
 COPY package.json package.json
 COPY package-lock.json package-lock.json
-COPY src src
-COPY test test
-COPY healthy healthy
 
 # Run scripts inside the image on build-time
 RUN npm install
+
+COPY src src
+COPY test test
+COPY healthy healthy
 
 RUN ls -la
 
