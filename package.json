@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "jest --watch",
+    "test:ci": "jest",
     "start": "node src/server.js"
   },
   "repository": {
