@@ -1,12 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: details-nodejs
+  name: details-v2
   labels:
     name: app-metrics-label
+    app: details
+    service: details
 spec:
   selector:
-    app: details-nodejs
+    app: details
+    version: v2
   ports:
     - port: 9080
       targetPort: 3000
