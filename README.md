@@ -30,7 +30,7 @@ docker push de.icr.io/kmddk/bookinfo-details-v2:1
 
 ## Deploy manually
 Before deploying the current service needs to be modified by adding a version tag to the service selector. 
-Alter the current service `details` to add a version selector. You can do this anyway that works for you (web, oc edit, download the file and apply it again).  Ensure to add the `version: v1` to he selector section of the service YAML.
+Alter the current (ruby-based) service `details` to add a version selector. You can do this anyway that works for you (web, oc edit, download the file and apply it again).  Ensure to add the `version: v1` to he selector section of the service YAML.
 ```yaml
 selector:
     app: details
