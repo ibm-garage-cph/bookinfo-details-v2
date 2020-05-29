@@ -33,16 +33,3 @@ spec:
             resource: git
           - name: image
             resource: image
-    - name: apply-manifest
-      taskRef:
-        name: apply-manifests-task
-      runAfter: [build-push]
-      resources:
-        inputs:
-          - name: git
-            resource: git
-          - name: image
-            resource: image
-      params:
-        - name: namespace
-          value: $(params.NAMESPACE)

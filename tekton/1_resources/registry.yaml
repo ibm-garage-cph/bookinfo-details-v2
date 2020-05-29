@@ -6,4 +6,4 @@ spec:
   type: image
   params:
     - name: url
-      value: de.icr.io/kmddk/bookinfo-details-mn
+      value: de.icr.io/kmddk/bookinfo-details-v2

@@ -40,7 +40,7 @@ spec:
           echo "SHORT_GIT_HASH = $SHORT_GIT_HASH"
           cd ./$(inputs.params.TARGET_DIRECTORY)
           pwd 
-          ls -al
+          ls -al 
 
           echo "Building Image $NEW_IMAGE_ID"
           buildah bud --tls-verify="$(inputs.params.TLSVERIFY)" \
